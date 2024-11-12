@@ -25,6 +25,7 @@ Bu senaryoyu ve akışını çizimle anlatmadan önce, her bir servisin görevle
 Bu senaryoyu Mermaid dili ile ifade ederek akış diyagramını oluşturabiliriz:
 
 ```mermaid
+
 sequenceDiagram
     participant WebUI
     participant RequestService
@@ -43,6 +44,7 @@ sequenceDiagram
     NotificationService->>NotificationService: E-postayı müşteriye gönder
     NotificationService-->>-OfferService: E-posta durumu (başarılı/başarısız)
     OfferService-->>-RequestService: Teklif gönderildi bilgisi (gRPC)
+
 ```
 
 ---
