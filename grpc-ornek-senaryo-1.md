@@ -38,12 +38,12 @@ sequenceDiagram
     RequestService->>+CostAnalysisService: Talep verisi ile maliyet analizi isteği (gRPC)
     CostAnalysisService->>CostAnalysisService: Maliyet analizi ve teklif oluştur
     CostAnalysisService->>CostAnalysisService: Teklifi veritabanına kaydet
-    CostAnalysisService-->>-OfferService: Teklif verisi ile sonuç gönder (gRPC)
+    CostAnalysisService-->>OfferService: Teklif verisi ile sonuç gönder (gRPC)
     OfferService->>OfferService: Teklifi müşteriye hazırlama
     OfferService->>+NotificationService: Teklif mailini hazırlayıp gönder (gRPC)
     NotificationService->>NotificationService: E-postayı müşteriye gönder
-    NotificationService-->>-OfferService: E-posta durumu (başarılı/başarısız)
-    OfferService-->>-RequestService: Teklif gönderildi bilgisi (gRPC)
+    NotificationService-->>OfferService: E-posta durumu (başarılı/başarısız)
+    OfferService-->>RequestService: Teklif gönderildi bilgisi (gRPC)
 
 ```
 
